@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhuan Bello</title>
+    <title>Rhuan Bello - Portfólio</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/css/style.css">
     <script defer src="script.js"></script>
@@ -14,19 +15,22 @@
         <div class="container">
             <div class="menu">
                 <i class="ri-menu-line"></i>
+                <i class="ri-close-line hidden"></i>
             </div>
-            <h2>Portfólio</h2>
+            <a href="#">
+                <h2>Portfólio</h2>
+            </a>    
             <div class="toggle">
-                <div class="button"></div>
+                <input type="checkbox" name="" id="checkbox">
+                <label for="checkbox" class="label">
+                    <div class="box"></div>
+                </label>
             </div>
         </div>
     </header>
     <section id="sobre">
         <div class="container">
             <div class="banner">
-                <div class="profile">
-                    <img src="assets/avatar.png" alt="">
-                </div>
                 <div class="intro">
                     <div class="title">
                         <h1>Olá, eu sou o <span>Rhuan Bello :)</span></h1>
@@ -36,6 +40,9 @@
                         <a href="#">Download CV</a>
                         <a href="#">Entrar em contato</a>
                     </div>
+                </div>
+                <div class="profile">
+                    <img src="assets/avatar2.png" alt="">
                 </div>
             </div>
             <div class="about">
@@ -466,5 +473,14 @@
             </div>
         </div>
     </section>
+    <div class="menuOpen hidden">
+        <h2>Bem-vindo ao meu Portfólio :)</h2>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#skills-contacts">Habilidades</a>
+            <a href="#skills-contacts">Contatos</a>
+            <a href="#projects">Projetos</a>
+        </nav>
+    </div>
 </body>
 </html>

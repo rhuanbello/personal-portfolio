@@ -1,15 +1,18 @@
 body {
-
-    min-height: 100vh;
     background-color: $dark-color;
-
-    
-
-   
+  
 }
 
 header {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: $dark-color;
+
+    &.open {
+        background-color: $transparent;
+        backdrop-filter: blur(10px);
+    }
 
     .container {
         display: flex;
@@ -29,6 +32,7 @@ header {
                 &:hover {
                     background-color: $primary-color;
                     color: $dark-color;
+
                 }
 
             }
@@ -39,6 +43,42 @@ header {
             font-size: 2.6rem;
             font-weight: bold;
             color: $light-color;
+        }
+
+        .toggle {
+            display: flex;
+            // background-color: $primary-color;
+
+            input {
+                // visibility: hidden;
+                opacity: 0;
+                position: absolute;
+
+                &:checked + .label .box {
+                    transform: translateX(3rem);
+
+                }
+            }
+
+            .label {
+                display: flex;
+                background: $primary-color;
+                width: 5rem;
+                border-radius: 2rem;
+                padding: .3rem;
+                cursor: pointer;
+
+                .box {
+                    
+                    background-color: $dark-color;
+                    height: 2rem;
+                    width: 2rem;
+                    border-radius: 50%;
+                    transition: .5s;
+                }
+
+            }
+
         }
 
     }
@@ -53,27 +93,27 @@ header {
 
     }
 
+    
+
 }
 
 section#sobre {
-    // height: 100vh;
     padding-bottom: $gutter * 4.5;
 
     .container {
         display: flex;
         flex-direction: column;
-        align-items: center;
         
     }
 
     .banner {
+
         display: flex;
-        gap: $gutter * 1.5;
-        padding: $gutter * 4 0;
+        justify-content: space-between;
+        align-items: center;
+        padding: $gutter * 4 $gutter;
 
         .profile img {
-            // max-width: 100%;
-            // display: block;
             cursor: pointer;
             transition: .2s;
 
@@ -94,7 +134,7 @@ section#sobre {
 
                 h1 {
                     @include font(poppins);
-                    font-size: 3.6rem;
+                    font-size: 4.2rem;
                     font-weight: 500;
                     color: $light-color;
                     line-height: 5.4rem;
@@ -109,7 +149,7 @@ section#sobre {
 
                 p {
                     @include font(dmsans);
-                    font-size: 1.8rem;
+                    font-size: 2rem;
                     font-weight: 500;
                     color: $grey-color;
                 
@@ -131,10 +171,18 @@ section#sobre {
                     align-items: center;
                     justify-content: center;
                     border-radius: 2rem;
+                    transition: .3s;
                     
                     &:nth-child(2) {
                         background-image: none;
                         border: .1rem solid $primary-color;
+
+                    }
+
+                    &:hover {
+                        background-image: $reverse-btn-gradient;
+                        transform: scale(0.95);
+
                     }
 
                 }
@@ -173,8 +221,7 @@ section#sobre {
 }
 
 section#skills-contacts {
-    height: 100vh;
-    margin-top: $gutter;
+    margin: $gutter 0 $gutter * 4 0;
 
     .skills {
         .container {
@@ -262,6 +309,7 @@ section#skills-contacts {
 
         .icons {
             display: flex;
+            flex-wrap: wrap;
             gap: $gutter * 3;
             justify-content: center;
         
@@ -338,6 +386,7 @@ section#projects {
         flex-direction: column;
         padding-bottom: 10rem;
         // align-items: center;
+        // padding: 0 0 10rem $gutter * 2;
 
         h2 {
             @include font(dmsans);
@@ -372,10 +421,9 @@ section#projects {
 
         .cards-projects {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
             gap: $gutter * 1.5;
             flex-wrap: wrap;
+            align-items: center;
 
             .box {
                 transition: .3s;
@@ -494,17 +542,62 @@ section#projects {
             }
         }
 
-        .highlights {
-           
 
-
-
-        }
 
     }
 
 
 }
+
+
+.menuOpen {
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    background-color: $transparent;
+    backdrop-filter: blur(10px);
+    top: 9%;
+    height: 100vh;
+    animation: appearField 1s;
+    @include font(poppins);
+    display: flex;
+    flex-direction: column;
+    padding-top: $gutter * 3;
+    align-items: center;
+
+    h2 {
+        color: $primary-color;
+        font-weight: 600;
+        font-size: 3.8rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: $gutter * 4;
+        gap: $gutter * 1.5;
+        height: 100%;
+     
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: $light-color;
+            font-size: 3.8rem;
+            transition: .3s;
+            &:hover {
+                color: $primary-color;
+                transform: scale(1.4);
+            }
+
+        }
+
+
+    }
+
+}
+
 
 .modal {
     display: flex;
@@ -621,4 +714,67 @@ body {
         z-index: 4;
         animation: fade 1s;
     }
+
+    &.light-mode {
+
+        background-color: $light-color;
+
+        header {
+            background-color: $dark-color;  
+
+            h2 {
+                color: $light-color !important;
+            }
+        }
+
+        .banner {
+            h1 {
+                color: $dark-color !important;
+                
+            }
+            span {
+                color: $dark-color !important;
+            }
+            
+            .actions {
+                a:nth-child(2) {
+                    color: $dark-color !important;
+                    &:hover {
+                        color: $light-color !important;
+                    }
+
+                }
+            }
+
+            
+        }
+        
+        h2, h3 {
+            color: $dark-color !important;
+            
+        }
+
+        .contacts {
+            p {
+                color: $dark-color !important;
+            }
+        }
+
+        .modal {
+            h2 {
+                color: $primary-color !important;
+            }
+        }
+
+        .menuOpen {
+            h2 {
+                color: $light-color !important;
+            }
+        }
+
+        
+
+    }
+    
 }
+
