@@ -1,0 +1,44 @@
+@keyframes fade {
+    from {
+        
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes showDown {
+    from {
+        opacity: 0;
+        transform: translateY(-200%);
+        
+
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+}
+
+@keyframes backgroundScale {
+    to {
+        
+        background-color: $primary-color;
+        transform: scale(1.1);
+
+    }
+}
+
+@keyframes scaleDelayed {
+    to {
+        transform: scale(1.2);
+        position: relative;
+        z-index: 2;
+    }
+}

@@ -1,0 +1,76 @@
+:root {
+  font-size: 62.5%;
+
+  @include responsive(mobile) {
+      font-size: 55%;
+  }
+
+  @include responsive(tablet) {
+      font-size: 57%;
+  }
+
+  @include responsive(tabletplus) {
+      font-size: 59%;
+  }
+
+  @include responsive(notebook) {
+      font-size: 61%;
+  
+  }
+
+  body {
+    font-size: 1.6rem;
+
+  }
+
+}
+
+.hidden {
+    display: none !important;
+
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+
+    // @include responsive(mobile) {
+    //     width: 46.8rem;
+    
+    // } 
+
+    // @include responsive(tablet) {
+    //     width: 75rem;
+
+    // }
+
+    // @include responsive(tabletplus) {
+    //     width: 97rem;
+
+    // }
+
+    // @include responsive(tabletplus) {
+    //     width: 117rem;
+
+    // }
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 1.4rem;
+
+
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: $dark-color;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-color;
+
+}

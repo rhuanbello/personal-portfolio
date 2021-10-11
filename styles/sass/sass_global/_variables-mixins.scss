@@ -1,0 +1,48 @@
+$primary-color: #8257E6;
+$light-color: #F9F9F9;
+$grey-color: #828282;
+$dark-color: #13131F;
+$box-color: #212121;
+$line-gradient: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
+$btn-gradient: linear-gradient(90.24deg, rgba(130, 87, 230, 0.8) 0.19%, rgba(121, 48, 190, 0.648) 99.8%);
+$transparent: rgba(0, 0, 0, .65);
+$gutter: 2.5rem;
+
+@mixin font($type){
+
+    @if $type == 'dmsans' {
+        font-family: 'DM Sans', sans-serif;
+    } @else if $type == 'poppins' {
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+}
+
+@mixin responsive($device) {
+
+    @if $device == mobile {
+        @media (max-width: 480px) {
+            @content;
+
+        }
+
+    } @else if $device == tablet {
+        @media (max-width: 768px) {
+            @content;
+        }
+
+    } @else if $device == tabletplus {
+        @media (max-width: 992px) {
+            @content;
+        }
+
+    } @else if $device == notebook {
+        @media (max-width: 1200px) {
+            @content;
+
+        }
+
+    }
+
+}
