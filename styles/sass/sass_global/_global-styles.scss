@@ -1,7 +1,6 @@
 :root {
-  scroll-behavior: smooth;
-  
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   @include responsive(mobile) {
       font-size: 55%;

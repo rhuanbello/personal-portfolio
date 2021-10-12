@@ -140,11 +140,17 @@ section#sobre {
                     line-height: 5.4rem;
 
 
-                    span {
-                        display: block;
-                        color: $primary-color;
+                }
 
-                    }
+                span {
+                    @include font(poppins);
+                    font-size: 4.2rem;
+                    font-weight: 500;
+                    color: $light-color;
+                    line-height: 5.4rem;
+                    display: block;
+                    color: $primary-color;
+
                 }
 
                 p {
@@ -549,6 +555,16 @@ section#projects {
 
 }
 
+section {
+    opacity: 0;
+    transition: .5s;
+    transform: translateX(-10rem);
+
+    &.active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
 .menuOpen {
     position: fixed;
@@ -564,6 +580,7 @@ section#projects {
     flex-direction: column;
     padding-top: $gutter * 3;
     align-items: center;
+    animation: fade 1s;
 
     h2 {
         color: $primary-color;
