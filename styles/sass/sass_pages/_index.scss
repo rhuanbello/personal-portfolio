@@ -48,15 +48,18 @@ header {
 
         .toggle {
             display: flex;
-            // background-color: $primary-color;
 
             input {
-                // visibility: hidden;
                 opacity: 0;
                 position: absolute;
 
                 &:checked + .label .box {
-                    transform: translateX(3rem);
+                    transform: translateX(4rem);
+
+                    @include responsive (mobile) {
+                        transform: translateX(2rem);
+                
+                    }
 
                 }
             }
@@ -64,10 +67,15 @@ header {
             .label {
                 display: flex;
                 background: $primary-color;
-                width: 5rem;
+                width: 6rem;
                 border-radius: 2rem;
                 padding: .3rem;
                 cursor: pointer;
+
+                @include responsive (mobile) {
+                    width: 4rem;
+            
+                }
 
                 .box {
                     
@@ -76,6 +84,13 @@ header {
                     width: 2rem;
                     border-radius: 50%;
                     transition: .5s;
+
+                    @include responsive (mobile) {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                
+                    }
+                    
                 }
 
             }
@@ -736,6 +751,10 @@ section#projects {
         gap: $gutter * 1.5;
         height: 100%;
      
+        @include responsive (mobile) {
+            gap: $gutter * 3
+    
+        }
 
         a {
             cursor: pointer;
@@ -746,6 +765,11 @@ section#projects {
             &:hover {
                 color: $primary-color;
                 transform: scale(1.4);
+            }
+
+            @include responsive (mobile) {
+                font-size: 3rem;
+        
             }
 
         }
@@ -777,6 +801,13 @@ section#projects {
         top: 53%;
     }
 
+    @include responsive (mobile) {
+        width: 85%;
+        height: 80%;
+        top: 55%;
+
+    }
+
     .top {
         display: flex;
         gap: $gutter * 1.5;
@@ -792,9 +823,6 @@ section#projects {
         }
 
         .video {
-            // width: 100%;
-            // height: 40%;
-            
             @include responsive (tabletplus)  {
                 display: flex;
                 justify-content: center;
@@ -888,6 +916,7 @@ section#projects {
 
         @include responsive (mobile) {
             flex-wrap: wrap;
+            gap: $gutter / 2;
 
         }
 
