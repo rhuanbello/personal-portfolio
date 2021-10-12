@@ -38,7 +38,7 @@ const dataProjects = [
         videoSrc: 'https://streamable.com/e/6ci737',
         linkedin: 'https://www.linkedin.com/posts/rhuanbello_opentowork-css-html-activity-6827021119288156160-qT7i',
         repository: 'https://rhuanbello.github.io/nlw6-origin/',
-        site: 'https://deathcatgrocerystore.vercel.app/'
+        site: 'https://rhuanbello.github.io/nlw6-origin/'
 
     },
     {
@@ -180,7 +180,7 @@ const dataProjects = [
 const openModal = () => {
     const closeModal = document.querySelector('.modal .ri-close-line')
     const modal = document.querySelector('.modal')
-    const description = document.querySelectorAll('.box .description')
+    const box = document.querySelectorAll('.cards-projects .box')
     const modalTitle = modal.querySelector('.title h2')
     const modalDescription = modal.querySelector('.info p')
     const modalDate = modal.querySelector('span')
@@ -189,7 +189,7 @@ const openModal = () => {
     const modalLinkLinkedin = modal.querySelector('.links a.link-linkedin')
     const iframe = modal.querySelector('.video iframe')
 
-    description.forEach((item, index) => {
+    box.forEach((item, index) => {
 
         const addData = () => {
 

@@ -643,6 +643,7 @@ section#projects {
                     align-items: center;
                     justify-content: space-between;
                     border-radius: 0 0 2rem 2rem;
+                    cursor: pointer;
 
                     @include responsive (tablet) {
                         width: 88%;
@@ -788,6 +789,7 @@ section#projects {
     background-color: $dark-color;
     border-radius: 1rem;
     animation: fade 1s;
+
 
     position: fixed;
     top: 50%;
