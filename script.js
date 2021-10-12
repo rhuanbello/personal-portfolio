@@ -1,8 +1,8 @@
-const initOpenModal = () => {
+const openModal = () => {
     const projects = document.querySelectorAll('.cards-projects .box')
     const projectsNames = document.querySelectorAll('.cards-projects .box .details p')
     const closeModal = document.querySelector('.modal .ri-close-line')
-    const modal = document.querySelector('section#projects .modal')
+    const modal = document.querySelector('.modal')
     const description = document.querySelectorAll('.box .description')
     const modalTitle = modal.querySelector('.title h2')
     const modalDescription = modal.querySelector('.info p')
@@ -59,7 +59,7 @@ const initOpenModal = () => {
 
 }
 
-initOpenModal()
+openModal()
 
 // Light Mode
 
@@ -129,7 +129,7 @@ initOpenMenu()
 // Scroll Animation
 
 const initAnimationScroll = () => {
-    const sections = document.querySelectorAll('section')
+    const sections = document.querySelectorAll('.js-section')
 
     const windowHalfSize = window.innerHeight * 0.6
     

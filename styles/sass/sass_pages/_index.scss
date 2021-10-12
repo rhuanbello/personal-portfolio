@@ -19,6 +19,7 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 2.5rem 0;
+        flex-wrap: wrap;
         
 
         .menu {
@@ -100,6 +101,10 @@ header {
 section#sobre {
     padding-bottom: $gutter * 4.5;
 
+    @include responsive (mobile) {
+        padding-bottom: $gutter * 2;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -113,13 +118,48 @@ section#sobre {
         align-items: center;
         padding: $gutter * 4 $gutter;
 
-        .profile img {
-            cursor: pointer;
-            transition: .2s;
+        @include responsive (mobile) {
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            padding-top: 5rem;
+            text-align: center;
+    
+        }
 
-            &:hover {
-                transform: scale(1.1);
+
+        .profile {
+
+            @include responsive (mobile) {
+                text-align: center;
+      
             }
+        
+            img {
+                cursor: pointer;
+                transition: .2s;
+                max-width: 100%;
+                animation: scaleDelayed 1s 6.5s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                @include responsive (tablet) {
+                    width: 30rem;
+                }
+
+                @include responsive (verticalphone) {
+                    width: 19rem;
+            
+                }
+
+                @include responsive (mobile) {
+                    width: 60%;
+                    margin-bottom: $gutter;
+                    
+                }
+            }
+        
         }
 
         .intro {
@@ -139,6 +179,19 @@ section#sobre {
                     color: $light-color;
                     line-height: 5.4rem;
 
+                    
+                    @include responsive (tablet) {
+                        font-size: clamp(2rem, 5vw, 4rem) !important;
+                        line-height: 120% !important;
+                        
+                    }
+
+                    @include responsive (mobile) {
+                        font-size: clamp(3.6rem, 10vw, 4.2rem) !important;
+                        line-height: 120% !important;
+        
+                        
+                    }
 
                 }
 
@@ -151,6 +204,18 @@ section#sobre {
                     display: block;
                     color: $primary-color;
 
+                    @include responsive (tablet) {
+                        font-size: clamp(2rem, 5vw, 4rem) !important;
+                        line-height: 120% !important;
+                        
+                    }
+
+                    @include responsive (mobile) {
+                        font-size: clamp(3.6rem, 10vw, 4.2rem) !important;
+                        line-height: 130% !important;
+                    }
+
+
                 }
 
                 p {
@@ -158,6 +223,17 @@ section#sobre {
                     font-size: 2rem;
                     font-weight: 500;
                     color: $grey-color;
+
+                    @include responsive (tablet) {
+                        font-size: clamp(1.4rem, 2.3vw, 1.8rem) !important;
+                        line-height: 120% !important;
+
+                    }
+
+                    @include responsive (mobile) {
+                        font-size: clamp(1rem, 8vw, 1.8rem) !important;
+                        line-height: 150% !important;
+                    }
                 
                 }
             }
@@ -165,6 +241,11 @@ section#sobre {
             .actions {
                 display: flex;
                 gap: $gutter;
+
+                @include responsive (mobile) {
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
 
                 a {
                     @include font(dmsans);
@@ -189,6 +270,25 @@ section#sobre {
                         background-image: $reverse-btn-gradient;
                         transform: scale(0.95);
 
+                    }
+
+                    
+                    @include responsive(tablet) {
+                        font-size: clamp(1.2rem, 2vw, 1rem) !important;
+                        padding: 1.2rem 1.5rem !important;
+                        border-radius: 2rem;
+                    }
+                    
+                    @include responsive (verticalphone) {
+                        font-size: clamp(1.1rem, 1.5vw, 1rem) !important;
+                        padding: 1rem 1rem !important;
+                        
+                    }
+
+                    @include responsive (mobile) {
+                        width: 100% !important;
+                        font-size: 1.6rem !important;
+                        padding: 1.4rem 2.5rem !important;
                     }
 
                 }
@@ -216,13 +316,22 @@ section#sobre {
             @include font(dmsans);
             font-size: 1.8rem;
             text-align: center;
-            max-width: 55%;
+            width: 55%;
             line-height: 180%;
 
+            @include responsive (notebook) {
+                width: 100%;
+            }
+
+            @include responsive (verticalphone) {
+                font-size: 1.6rem;
+            }
 
         }
 
     }
+
+
 
 }
 
@@ -242,14 +351,22 @@ section#skills-contacts {
                 color: $light-color;
                 font-weight: 600;
                 margin-bottom: $gutter * 4;
+
+                @include responsive (mobile) {
+                    margin-bottom: $gutter * 2;
+                }
             }
 
             .cards {
                 display: flex;
-                flex-wrap: wrap;
+                
                 align-items: center;
                 gap: $gutter  * 2;
 
+                @include responsive (tabletplus) {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
 
                 .box {
                     position: relative;
@@ -391,8 +508,6 @@ section#projects {
         display: flex;
         flex-direction: column;
         padding-bottom: 10rem;
-        // align-items: center;
-        // padding: 0 0 10rem $gutter * 2;
 
         h2 {
             @include font(dmsans);
@@ -410,6 +525,7 @@ section#projects {
             position: relative;
             display: inline-block;
             margin-block: $gutter * 4 5rem;
+            // text-align: center;
             
             &::after {
                 content: '';
@@ -430,15 +546,20 @@ section#projects {
             gap: $gutter * 1.5;
             flex-wrap: wrap;
             align-items: center;
+            // justify-content: center;
 
             .box {
                 transition: .3s;
-                width: 40rem;
+                min-width: 30%;
                 
                 &:hover {
                     transform: scale(1.2);
                     position: relative;
                     z-index: 2;
+
+                    @include responsive (mobile) {
+                        transform: scale(1.05);
+                    }
             
                 }
 
@@ -508,6 +629,14 @@ section#projects {
                     justify-content: space-between;
                     border-radius: 0 0 2rem 2rem;
 
+                    @include responsive (tablet) {
+                        width: 88%;
+                    }
+
+                    @include responsive (mobile) {
+                        width: 90%;
+                    }
+
                     p {
                         @include font(poppins);
                         font-weight: 500;
@@ -545,17 +674,23 @@ section#projects {
                     
                 }
 
+                @include responsive (tabletplus) {
+                    width: 40vw;
+                }
+
+                @include responsive (mobile) {
+                    width: 100%;
+                }
+            
             }
         }
-
-
 
     }
 
 
 }
 
-section {
+.js-section {
     opacity: 0;
     transition: .5s;
     transform: translateX(-10rem);
@@ -586,6 +721,11 @@ section {
         color: $primary-color;
         font-weight: 600;
         font-size: 3.8rem;
+        
+        @include responsive (verticalphone) {
+            font-size: clamp(1.6rem, 6vw, 3rem) !important;
+
+        }
     }
 
     nav {
@@ -615,19 +755,15 @@ section {
 
 }
 
-
 .modal {
     display: flex;
     flex-direction: column;
     width: 75%;
     padding: $gutter;
     gap: $gutter;
-    // background-color: #000;
     background-color: $dark-color;
     border-radius: 1rem;
     animation: fade 1s;
-
-    // backdrop-filter: blur(.3rem);
 
     position: fixed;
     top: 50%;
@@ -635,18 +771,65 @@ section {
     z-index: 5;
     transform: translate(-50%, -50%);
 
+    @include responsive (tablet) {
+        width: 85%;
+        height: 80%;
+        top: 53%;
+    }
+
     .top {
         display: flex;
         gap: $gutter * 1.5;
 
+        @include responsive (tabletplus)  {
+            flex-wrap: wrap-reverse;
+           
+
+        }
+
+        @include responsive (tablet) {
+            gap: 0;
+        }
+
         .video {
+            // width: 100%;
+            // height: 40%;
             
+            @include responsive (tabletplus)  {
+                display: flex;
+                justify-content: center;
+    
+            }
             
             iframe {
                 width: 60rem;
                 height: 35rem;
-                
+            
+                @include responsive (notebook) {
+                    width: 40rem;
+                }
+
+                @include responsive (tabletplus)  {
+                    width: 70rem;
+        
+                }
+
+                @include responsive (tablet) {
+                    width: 53rem;
+                }
+
+                @include responsive (verticalphone) {
+                    width: 38rem;
+                    height: 20rem;
+                    margin-top: $gutter
+                }
+
+                @include responsive (mobile) {
+                    display: none;
+
+                }
             }
+
 
         }
 
@@ -683,6 +866,8 @@ section {
                 font-weight: 500;
                 color: $grey-color;
                 line-height: 140%;
+                padding: 1rem 0;
+
 
             }
 
@@ -701,6 +886,11 @@ section {
         display: flex;
         gap: $gutter;
 
+        @include responsive (mobile) {
+            flex-wrap: wrap;
+
+        }
+
         a {
             display: inline-block;
             width: fit-content;
@@ -711,6 +901,11 @@ section {
             padding: 1rem 1.5rem; 
             background-image: $btn-gradient;
             border-radius: .5rem;
+
+            @include responsive (mobile) {
+                width: 100%;
+                text-align: center;
+            }
 
         }
     }
@@ -728,7 +923,7 @@ body {
         top: 0;
         left: 0;
         position: absolute;
-        z-index: 4;
+        z-index: 0;
         animation: fade 1s;
     }
 

@@ -28,8 +28,14 @@ $gutter: 2.5rem;
 
         }
 
+    } @else if $device == verticalphone {
+        @media (max-width: 660px) {
+            @content;
+
+        }
+
     } @else if $device == tablet {
-        @media (max-width: 768px) {
+        @media (max-width: 860px) {
             @content;
         }
 
