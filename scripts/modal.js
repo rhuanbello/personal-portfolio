@@ -32,6 +32,21 @@ const dataProjects = [
 
     },
     {
+        title: 'Calculadora do Windows 10',
+        date: '14 de Outubro de 2021',
+        description: `Esse é um projeto que eu desenvolvi a interface há dois meses atrás, mas que só fui me sentir confiante pra dar continuidade recentemente depois de avançar em meus estudos, pois meu objetivo era de construir toda a lógica do zero, sem utilizar a função eval(). <br><br> Eu ainda não tinha feito uma calculadora, e creio que esse seja um dos principais exercícios pra praticar a lógica de programação, então além de aplicar as funcionalidades e a interface da calculadora do Windows 10, tentei simular uma espécie de ambiente desktop, onde é possível abrir, fechar ou minimizar a aplicação. <br><br>  Algumas features que valem destacar: <br><br>
+        • É possível utilizar o teclado para realizar as operações matemáticas; <br>
+        • Ao "fechar" a calculadora os dados do display são apagados; <br>
+        • Só é possível adicionar um ponto decimal; <br>
+        • O tamanho da fonte do display se adapta conforme os números são adicionados; <br>
+        • Responsivo para Mobile;`,
+        videoSrc: 'https://streamable.com/e/65khi6',
+        linkedin: 'https://www.linkedin.com/posts/rhuanbello_clone-windows-calculator-activity-6854500487987904512-kwzK',
+        repository: 'https://github.com/rhuanbello/clone-windowsCalculator',
+        site: 'https://calculator-rhuanbello.vercel.app/'
+
+    },
+    {
         title: 'Barber House',
         date: '30 de Julho de 2021',
         description: "A Barber House é uma landing page mobile-first que reúne os conceitos fundamentais de HTML5, CSS3 e JavaScript. Ela possui animações para fazer surgir gradualmente cada section no decorrer do scroll. Além de ser totalmente responsiva para diferentes tamanhos de tela, é uma página facilmente customizável, pois todas as cores utilizadas estão armazenadas em variáveis dentro do CSS.",
@@ -92,16 +107,7 @@ const dataProjects = [
         site: 'https://rhuanbello.github.io/cultflix/'
 
     },
-    {
-        title: 'Calculadora Windows 10',
-        date: 'Em desenvolvimento.',
-        description: "Em desenvolvimento.",
-        videoSrc: 'https://streamable.com/e/f4sno8',
-        linkedin: '',
-        repository: 'https://github.com/rhuanbello/clone-windowsCalculator',
-        site: 'https://calculator-rhuanbello.vercel.app/'
-
-    },
+    
     {
         title: 'Dashboard Star Wars',
         date: '08 de Julho de 2021',
@@ -205,7 +211,7 @@ const openModal = () => {
             modalLinkProject.setAttribute('href', dataProjects[index].site) 
             modalLinkRepository.setAttribute('href', dataProjects[index].repository) 
             modalLinkLinkedin.setAttribute('href', dataProjects[index].linkedin) 
-            iframe.setAttribute('src', dataProjects[index].videoSrc + '?autoplay=1')
+            iframe.setAttribute('src', dataProjects[index].videoSrc + '?autoplay=1&amp;loop=0')
 
         }
 
