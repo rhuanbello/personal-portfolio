@@ -32,6 +32,24 @@ const dataProjects = [
 
     },
     {
+        title: 'DoWhile 2021 Virtual Badge',
+        date: '24 de Outubro de 2021',
+        description: `O DoWhile 2021 Card é uma aplicação interativa que mostra informações do usuário através da API do GitHub :D <br><br>
+
+        Após concluir o evento, adicionei funcionalidades extras, como: <br><br>
+        
+        • Modal para o usuário inserir seus próprios dados no Card; <br>
+        • Armazenamento dos dados inseridos pelo usuário no LocalStorage do navegador, fazendo com que as informações sejam mantidas mesmo após fechar a página; <br>
+        • Animação de Flip em 3D (com CSS puro); <br>
+        • Verso do Card com informações sobre o DoWhile 2021; <br>
+        • Versão Desktop e Mobile.`, 
+        videoSrc: 'https://streamable.com/e/qceqn0',
+        linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:6858050562471145472/',
+        repository: 'https://github.com/rhuanbello/origin-nlw-heat',
+        site: 'https://dowhile2021-rhuanbello.vercel.app/'
+
+    },
+    {
         title: 'Calculadora do Windows 10',
         date: '14 de Outubro de 2021',
         description: `Esse é um projeto que eu desenvolvi a interface há dois meses atrás, mas que só fui me sentir confiante pra dar continuidade recentemente depois de avançar em meus estudos, pois meu objetivo era de construir toda a lógica do zero, sem utilizar a função eval(). <br><br> Eu ainda não tinha feito uma calculadora, e creio que esse seja um dos principais exercícios pra praticar a lógica de programação, então além de aplicar as funcionalidades e a interface da calculadora do Windows 10, tentei simular uma espécie de ambiente desktop, onde é possível abrir, fechar ou minimizar a aplicação. <br><br>  Algumas features que valem destacar: <br><br>
