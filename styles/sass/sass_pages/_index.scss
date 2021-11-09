@@ -356,7 +356,7 @@ section#sobre {
 
 }
 
-section#skills-contacts {
+section#skills {
     margin: $gutter 0 $gutter * 4 0;
 
     .skills {
@@ -433,6 +433,12 @@ section#skills-contacts {
         }
     }
 
+
+}
+
+section#contacts {
+    margin: $gutter 0 $gutter * 4 0;
+    
     .contacts {
         margin-top: $gutter * 3;
 

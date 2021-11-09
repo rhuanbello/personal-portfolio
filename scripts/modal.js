@@ -2,36 +2,6 @@
 
 const dataProjects = [
     {
-        title: 'Youtube Clone',
-        date: '23 de Setembro de 2021',
-        description: "Essa foi a minha tentativa de clonar a interface do YouTube utilizando HTML5, CSS3 e JavaScript. Com o conceito Don't Repeat Yourself na mente, fiz com que todo o projeto rodasse em uma única página manipulada pelo JavaScript, que fica responsável por atualizar o source e a descrição dos vídeos dependendo de qual vídeo o usuário seleciona, além de ocultar/exibir o sidebar e a main para dar destaque ao vídeo. Estou há aproximadamente um mês e meio estudando JavaScript e estou bem satisfeito por já estar conseguindo utilizá-lo para facilitar o desenvolvimento dos meus projetos, isso é extremamente motivador. Voltarei nesse projeto em breve para aprimorá-lo cada vez mais.",
-        videoSrc: 'https://streamable.com/e/q700dy',
-        linkedin: 'https://www.linkedin.com/posts/rhuanbello_html-css-developer-activity-6845803020157116417-39dj',
-        repository: 'https://github.com/rhuanbello/clone-youtube',
-        site: 'https://youtube-rhuanbello.vercel.app/'
-
-    },
-    {
-        title: 'Death Cat Grocery Store',
-        date: '28 de Setembro de 2021',
-        description: "Um E-Commerce utilizando apenas JavaScript (com localStorage) 🚀 <br><br> O objetivo desse segundo checkpoint era de desenvolver não só habilidades técnicas, mas também soft-skills como o trabalho em equipe e a organização. <br> Para essa entrega, nossa equipe (composta por Marcelo Garofalo, Filipe Farias e eu) decidiu transformar a entrega em uma loja virtual com JavaScript, alinhando o projeto com a nossa matéria de Programação Imperativa, ministrada pela instrutora Ana Cristina Teixeira. <br><br> Decidimos explorar as funcionalidades do localStorage para poder armazenar e recuperar as informações dos produtos adicionados ao carrinho, permitindo ao usuário alterar a quantidade de itens ou removê-los completamente. <br><br> Como demonstra o vídeo abaixo, mesmo após fecharmos o nosso navegador, os itens persistem em nosso carrinho de compras devido ao uso do localStorage, que armazena essas informações em nosso browser e possibilita a recuperação destes dados quando a página é aberta novamente.",
-        videoSrc: 'https://streamable.com/e/tlz8yr',
-        linkedin: 'https://www.linkedin.com/posts/rhuanbello_javascript-developer-digital-activity-6849053582579388416-IfoH',
-        repository: 'https://github.com/rhuanbello/deathcatgrocerystore',
-        site: 'https://deathcatgrocerystore.vercel.app/'
-
-    },
-    {
-        title: 'Digital Flix',
-        date: 'Em desenvolvimento',
-        description: "Em desenvolvimento",
-        videoSrc: '',
-        linkedin: '',
-        repository: '',
-        site: ''
-
-    },
-    {
         title: 'DoWhile 2021 Virtual Badge',
         date: '24 de Outubro de 2021',
         description: `O DoWhile 2021 Card é uma aplicação interativa que mostra informações do usuário através da API do GitHub :D <br><br>
@@ -50,6 +20,27 @@ const dataProjects = [
 
     },
     {
+        title: 'Daily Weather',
+        date: '28 de Outubro de 2021',
+        description: `Daily Weather é uma aplicação web que exibe a condição climática de todas as cidades, bairros, estados ou países do mundo. Obtendo tanto os dados da temperatura atual, quanto os dos próximos 7 dias, além da velocidade do vento, nível de umidade, data/hora e temperatura máxima e mínima. <br><br>
+
+        Esse projeto foi desenvolvido com as seguintes ferramentas: <br><br>
+        
+        • HTML5; <br>
+        • Vanilla JavaScript; <br>
+        • Compilador SASS; <br>
+        • Unsplash API; <br>
+        • Open Weather API (One Call & Current Weather Data); <br>
+        • LocalStorage API; <br>
+        • Moment.js; <br>
+        `, 
+        videoSrc: 'https://streamable.com/e/usgia6',
+        linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:6862799471626059776/',
+        repository: 'https://github.com/rhuanbello/dailyweather',
+        site: 'https://dailyweather.vercel.app/'
+
+    },
+    {
         title: 'Calculadora do Windows 10',
         date: '14 de Outubro de 2021',
         description: `Esse é um projeto que eu desenvolvi a interface há dois meses atrás, mas que só fui me sentir confiante pra dar continuidade recentemente depois de avançar em meus estudos, pois meu objetivo era de construir toda a lógica do zero, sem utilizar a função eval(). <br><br> Eu ainda não tinha feito uma calculadora, e creio que esse seja um dos principais exercícios pra praticar a lógica de programação, então além de aplicar as funcionalidades e a interface da calculadora do Windows 10, tentei simular uma espécie de ambiente desktop, onde é possível abrir, fechar ou minimizar a aplicação. <br><br>  Algumas features que valem destacar: <br><br>
@@ -62,6 +53,36 @@ const dataProjects = [
         linkedin: 'https://www.linkedin.com/posts/rhuanbello_clone-windows-calculator-activity-6854500487987904512-kwzK',
         repository: 'https://github.com/rhuanbello/clone-windowsCalculator',
         site: 'https://calculator-rhuanbello.vercel.app/'
+
+    },
+    {
+        title: 'Death Cat Grocery Store',
+        date: '28 de Setembro de 2021',
+        description: "Um E-Commerce utilizando apenas JavaScript (com localStorage) 🚀 <br><br> O objetivo desse segundo checkpoint era de desenvolver não só habilidades técnicas, mas também soft-skills como o trabalho em equipe e a organização. <br> Para essa entrega, nossa equipe (composta por Marcelo Garofalo, Filipe Farias e eu) decidiu transformar a entrega em uma loja virtual com JavaScript, alinhando o projeto com a nossa matéria de Programação Imperativa, ministrada pela instrutora Ana Cristina Teixeira. <br><br> Decidimos explorar as funcionalidades do localStorage para poder armazenar e recuperar as informações dos produtos adicionados ao carrinho, permitindo ao usuário alterar a quantidade de itens ou removê-los completamente. <br><br> Como demonstra o vídeo abaixo, mesmo após fecharmos o nosso navegador, os itens persistem em nosso carrinho de compras devido ao uso do localStorage, que armazena essas informações em nosso browser e possibilita a recuperação destes dados quando a página é aberta novamente.",
+        videoSrc: 'https://streamable.com/e/tlz8yr',
+        linkedin: 'https://www.linkedin.com/posts/rhuanbello_javascript-developer-digital-activity-6849053582579388416-IfoH',
+        repository: 'https://github.com/rhuanbello/deathcatgrocerystore',
+        site: 'https://deathcatgrocerystore.vercel.app/'
+
+    },
+    {
+        title: 'Youtube Clone',
+        date: '23 de Setembro de 2021',
+        description: "Essa foi a minha tentativa de clonar a interface do YouTube utilizando HTML5, CSS3 e JavaScript. Com o conceito Don't Repeat Yourself na mente, fiz com que todo o projeto rodasse em uma única página manipulada pelo JavaScript, que fica responsável por atualizar o source e a descrição dos vídeos dependendo de qual vídeo o usuário seleciona, além de ocultar/exibir o sidebar e a main para dar destaque ao vídeo. Estou há aproximadamente um mês e meio estudando JavaScript e estou bem satisfeito por já estar conseguindo utilizá-lo para facilitar o desenvolvimento dos meus projetos, isso é extremamente motivador. Voltarei nesse projeto em breve para aprimorá-lo cada vez mais.",
+        videoSrc: 'https://streamable.com/e/q700dy',
+        linkedin: 'https://www.linkedin.com/posts/rhuanbello_html-css-developer-activity-6845803020157116417-39dj',
+        repository: 'https://github.com/rhuanbello/clone-youtube',
+        site: 'https://youtube-rhuanbello.vercel.app/'
+
+    },
+    {
+        title: 'Digital Flix',
+        date: 'Em desenvolvimento',
+        description: "Em desenvolvimento",
+        videoSrc: '',
+        linkedin: '',
+        repository: '',
+        site: ''
 
     },
     {
@@ -180,7 +201,7 @@ const dataProjects = [
         title: 'Le Scone',
         date: '01 de Outubro de 2021',
         description: "Projeto desenvolvido durante o curso de CSS com SASS da Origamid.",
-        videoSrc: 'https://streamable.com/e/e/ajfxe4',
+        videoSrc: 'https://streamable.com/e/ajfxe4',
         linkedin: '',
         repository: 'https://github.com/rhuanbello/lesconde',
         site: 'https://lesconde-rhuanbello.vercel.app/'
@@ -217,7 +238,7 @@ const openModal = () => {
 
         const addData = () => {
 
-            if (index != 2) {
+            if (index != 5) {
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
                 document.body.classList.add('transparent')
@@ -237,19 +258,17 @@ const openModal = () => {
 
     })
 
-    closeModal.addEventListener('click', () => {
+    const closingModal = () => {
         modal.classList.add('hidden')
         document.body.style.overflow = 'visible';
         document.body.classList.remove('transparent')
-    })
+        iframe.setAttribute('src', '')
 
-    document.addEventListener ('keydown', (event) => {
-        if (event.key === "Escape") { 
-            modal.classList.add('hidden')
-            document.body.style.overflow = 'visible';
-            document.body.classList.remove('transparent')
-        }
-    });
+    }
+
+    closeModal.addEventListener('click', closingModal)
+
+    document.addEventListener ('keydown', (event) => event.key === "Escape" ? closingModal() : '');
 
 }
 

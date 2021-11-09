@@ -18,45 +18,37 @@ const initOpenMenu = () => {
     const menu = document.querySelector('.menuOpen');
     const header = document.querySelector('header')
 
-    menuBtn.addEventListener('click', () => {
-        menu.classList.remove('hidden')
-        menuBtn.classList.add('hidden')
-        closeBtn.classList.remove('hidden')
-        document.body.style.overflow = 'hidden';
-        header.classList.add('open')
-    
-    })
-
-    closeBtn.addEventListener('click', () => {
+    const close = () => {
         menu.classList.add('hidden')
         menuBtn.classList.remove('hidden')
         closeBtn.classList.add('hidden')
         document.body.style.overflow = 'visible';
         header.classList.remove('open')
 
-    })
+    }
 
-    document.addEventListener ('keydown', (event) => {
-        if (event.key === "Escape") { 
-            menu.classList.add('hidden')
-            menuBtn.classList.remove('hidden')
-            closeBtn.classList.add('hidden')
-            document.body.style.overflow = 'visible';
-            header.classList.remove('open')
-        }
-    });
+    const open = () => {
+        menu.classList.remove('hidden')
+        menuBtn.classList.add('hidden')
+        closeBtn.classList.remove('hidden')
+        document.body.style.overflow = 'hidden';
+        header.classList.add('open')
+    }
 
+    // Open with Btn
+    menuBtn.addEventListener('click', open)
+
+    // Close with Btn
+    closeBtn.addEventListener('click', close)
+
+    // Close with Esc
+    document.addEventListener ('keydown', (event) => event.key === "Escape" ? close() : '');
+
+    // Close with Links
     const links = document.querySelectorAll('nav a')
 
     links.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.add('hidden')
-            menuBtn.classList.remove('hidden')
-            closeBtn.classList.add('hidden')
-            document.body.style.overflow = 'visible';
-            header.classList.remove('open')
-        })
-
+        link.addEventListener('click', close)
     })
 
 }
