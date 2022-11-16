@@ -380,7 +380,7 @@ section#skills {
 
             .cards {
                 display: flex;
-                
+                flex-wrap: wrap;
                 align-items: center;
                 gap: $gutter  * 2;
 
@@ -393,7 +393,13 @@ section#skills {
                     position: relative;
                     text-align: center;
                     background-color: $box-color;
-                    padding: 1.7rem 4.2rem 3.7rem 4.2rem;
+                    width: 12rem; 
+                    aspect-ratio: 1; 
+                    padding: 0; 
+                    display: flex; 
+                    flex-direction: column; 
+                    justify-content: center; 
+                    align-items: center;
 
                     border-top-left-radius: 2.5rem;
                     cursor: pointer;
@@ -406,6 +412,10 @@ section#skills {
                         color: $primary-color;
                         margin-bottom: 1.5rem;
 
+                    }
+
+                    img {
+                        width: 4rem;
                     }
 
                     &::after {
