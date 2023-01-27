@@ -1,6 +1,5 @@
 body {
   background-color: $dark-color;
-  
 }
 
 header {
@@ -20,22 +19,19 @@ header {
     align-items: center;
     padding: 2.5rem 0;
     flex-wrap: wrap;
-    
 
     .menu {
       i {
-          font-size: 2rem;
-          color: $primary-color;
-          cursor: pointer;
-          padding: .5rem;
-          border-radius: 50%;
+        font-size: 2rem;
+        color: $primary-color;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
 
-          &:hover {
-              background-color: $primary-color;
-              color: $dark-color;
-
-          }
-
+        &:hover {
+          background-color: $primary-color;
+          color: $dark-color;
+        }
       }
     }
 
@@ -56,16 +52,13 @@ header {
         &:checked + .label .box {
           transform: translateX(4rem);
 
-          @include responsive (mobile) {
+          @include responsive(mobile) {
             transform: translateX(2rem);
-      
           }
-
         }
 
         &:checked + .label {
           background-color: $light-color;
-
         }
       }
 
@@ -74,13 +67,12 @@ header {
         background: $primary-color;
         width: 6rem;
         border-radius: 2rem;
-        padding: .3rem;
+        padding: 0.3rem;
         cursor: pointer;
-        transition: background-color .5s;
+        transition: background-color 0.5s;
 
-        @include responsive (mobile) {
+        @include responsive(mobile) {
           width: 4rem;
-    
         }
 
         .box {
@@ -88,12 +80,11 @@ header {
           height: 2rem;
           width: 2rem;
           border-radius: 50%;
-          transition: .5s;
+          transition: 0.5s;
 
-          @include responsive (mobile) {
-              height: 1.5rem;
-              width: 1.5rem;
-      
+          @include responsive(mobile) {
+            height: 1.5rem;
+            width: 1.5rem;
           }
         }
       }
@@ -101,27 +92,25 @@ header {
   }
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 100%;
-    height: .1rem;
+    height: 0.1rem;
     background-image: $line-gradient;
-
   }
 }
 
 section#sobre {
   padding-bottom: $gutter * 4.5;
 
-  @include responsive (mobile) {
+  @include responsive(mobile) {
     padding-bottom: $gutter * 2;
   }
 
   .container {
     display: flex;
     flex-direction: column;
-      
   }
 
   .banner {
@@ -130,172 +119,160 @@ section#sobre {
     align-items: center;
     padding: $gutter * 4 $gutter;
 
-      @include responsive (mobile) {
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-        padding-top: 5rem;
+    @include responsive(mobile) {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+      padding-top: 5rem;
+      text-align: center;
+    }
+
+    .profile {
+      @include responsive(mobile) {
         text-align: center;
-  
       }
 
-      .profile {
-        @include responsive (mobile) {
-          text-align: center;
-  
+      img {
+        cursor: pointer;
+        transition: 0.2s;
+        max-width: 100%;
+        animation: scaleDelayed 1s 6.5s;
+
+        &:hover {
+          transform: scale(1.1);
         }
-    
-        img {
-          cursor: pointer;
-          transition: .2s;
-          max-width: 100%;
-          animation: scaleDelayed 1s 6.5s;
 
-          &:hover {
-            transform: scale(1.1);
-          }
+        @include responsive(tablet) {
+          width: 30rem;
+        }
 
-          @include responsive (tablet) {
-            width: 30rem;
+        @include responsive(verticalphone) {
+          width: 19rem;
+        }
 
-          }
-
-          @include responsive (verticalphone) {
-            width: 19rem;
-      
-          }
-
-          @include responsive (mobile) {
-            width: 60%;
-            margin-bottom: $gutter;
-              
-          }
+        @include responsive(mobile) {
+          width: 60%;
+          margin-bottom: $gutter;
         }
       }
+    }
 
-      .intro {
+    .intro {
+      display: flex;
+      flex-direction: column;
+      gap: $gutter;
+
+      .title {
         display: flex;
         flex-direction: column;
+        gap: 0.5rem;
+
+        h1 {
+          @include font(poppins);
+          font-size: 4.2rem;
+          font-weight: 500;
+          color: $light-color;
+          line-height: 5.4rem;
+
+          @include responsive(tablet) {
+            font-size: clamp(2rem, 5vw, 4rem) !important;
+            line-height: 120% !important;
+          }
+
+          @include responsive(mobile) {
+            font-size: clamp(3.6rem, 10vw, 4.2rem) !important;
+            line-height: 120% !important;
+          }
+        }
+
+        span {
+          @include font(poppins);
+          font-size: 4.2rem;
+          font-weight: 500;
+          color: $light-color;
+          line-height: 5.4rem;
+          display: block;
+          color: $primary-color;
+
+          @include responsive(tablet) {
+            font-size: clamp(2rem, 5vw, 4rem) !important;
+            line-height: 120% !important;
+          }
+
+          @include responsive(mobile) {
+            font-size: clamp(3.6rem, 10vw, 4.2rem) !important;
+            line-height: 130% !important;
+          }
+        }
+
+        p {
+          @include font(dmsans);
+          font-size: 2rem;
+          font-weight: 500;
+          color: $grey-color;
+
+          @include responsive(tablet) {
+            font-size: clamp(1.4rem, 2.3vw, 1.8rem) !important;
+            line-height: 120% !important;
+          }
+
+          @include responsive(mobile) {
+            font-size: clamp(1rem, 8vw, 1.8rem) !important;
+            line-height: 150% !important;
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
         gap: $gutter;
 
-          .title {
-            display: flex;
-            flex-direction: column;
-            gap: .5rem;
+        @include responsive(mobile) {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
 
-            h1 {
-              @include font(poppins);
-              font-size: 4.2rem;
-              font-weight: 500;
-              color: $light-color;
-              line-height: 5.4rem;
+        a {
+          @include font(dmsans);
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: $light-color;
+          padding: 1.2rem 2.7rem;
+          background-image: $btn-gradient;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 2rem;
+          transition: 0.3s;
 
-              @include responsive (tablet) {
-                font-size: clamp(2rem, 5vw, 4rem) !important;
-                line-height: 120% !important;
-                
-              }
-
-              @include responsive (mobile) {
-                font-size: clamp(3.6rem, 10vw, 4.2rem) !important;
-                line-height: 120% !important;
-                  
-              }
-            }
-
-            span {
-              @include font(poppins);
-              font-size: 4.2rem;
-              font-weight: 500;
-              color: $light-color;
-              line-height: 5.4rem;
-              display: block;
-              color: $primary-color;
-
-              @include responsive (tablet) {
-                font-size: clamp(2rem, 5vw, 4rem) !important;
-                line-height: 120% !important;
-                  
-              }
-
-              @include responsive (mobile) {
-                font-size: clamp(3.6rem, 10vw, 4.2rem) !important;
-                line-height: 130% !important;
-              }
-            }
-
-            p {
-              @include font(dmsans);
-              font-size: 2rem;
-              font-weight: 500;
-              color: $grey-color;
-
-              @include responsive (tablet) {
-                font-size: clamp(1.4rem, 2.3vw, 1.8rem) !important;
-                line-height: 120% !important;
-
-              }
-
-              @include responsive (mobile) {
-                font-size: clamp(1rem, 8vw, 1.8rem) !important;
-                line-height: 150% !important;
-              }
-            }
+          &:nth-child(2) {
+            background-image: none;
+            border: 0.1rem solid $primary-color;
           }
 
-          .actions {
-            display: flex;
-            gap: $gutter;
-
-            @include responsive (mobile) {
-              justify-content: center;
-              flex-wrap: wrap;
-            }
-
-            a {
-              @include font(dmsans);
-              font-size: 1.4rem;
-              font-weight: 500;
-              color: $light-color;
-              padding: 1.2rem 2.7rem;
-              background-image: $btn-gradient;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border-radius: 2rem;
-              transition: .3s;
-              
-              &:nth-child(2) {
-                background-image: none;
-                border: .1rem solid $primary-color;
-
-              }
-
-              &:hover {
-                background-image: $reverse-btn-gradient;
-                transform: scale(0.95);
-
-              }
-              
-              @include responsive(tablet) {
-                font-size: clamp(1.2rem, 2vw, 1rem) !important;
-                padding: 1.2rem 1.5rem !important;
-                border-radius: 2rem;
-              }
-              
-              @include responsive (verticalphone) {
-                font-size: clamp(1.1rem, 1.5vw, 1rem) !important;
-                padding: 1rem 1rem !important;
-                  
-              }
-
-              @include responsive (mobile) {
-                width: 100% !important;
-                font-size: 1.6rem !important;
-                padding: 1.4rem 2.5rem !important;
-              }
-            }
+          &:hover {
+            background-image: $reverse-btn-gradient;
+            transform: scale(0.95);
           }
+
+          @include responsive(tablet) {
+            font-size: clamp(1.2rem, 2vw, 1rem) !important;
+            padding: 1.2rem 1.5rem !important;
+            border-radius: 2rem;
+          }
+
+          @include responsive(verticalphone) {
+            font-size: clamp(1.1rem, 1.5vw, 1rem) !important;
+            padding: 1rem 1rem !important;
+          }
+
+          @include responsive(mobile) {
+            width: 100% !important;
+            font-size: 1.6rem !important;
+            padding: 1.4rem 2.5rem !important;
+          }
+        }
       }
+    }
   }
 
   .about {
@@ -309,7 +286,6 @@ section#sobre {
       font-size: 3.2rem;
       color: $light-color;
       font-weight: 600;
-
     }
 
     p {
@@ -320,702 +296,622 @@ section#sobre {
       width: 55%;
       line-height: 180%;
 
-      @include responsive (notebook) {
-          width: 100%;
+      @include responsive(notebook) {
+        width: 100%;
       }
 
-      @include responsive (verticalphone) {
-          font-size: 1.6rem;
+      @include responsive(verticalphone) {
+        font-size: 1.6rem;
       }
-
     }
   }
 }
 
 section#skills {
-    margin: $gutter 0 $gutter * 4 0;
+  margin: $gutter 0 $gutter * 4 0;
 
-    .skills {
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+  .skills {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
+      h2 {
+        @include font(dmsans);
+        font-size: 3.2rem;
+        color: $light-color;
+        font-weight: 600;
+        margin-bottom: $gutter * 4;
 
-            h2 {
-                @include font(dmsans);
-                font-size: 3.2rem;
-                color: $light-color;
-                font-weight: 600;
-                margin-bottom: $gutter * 4;
-
-                @include responsive (mobile) {
-                    margin-bottom: $gutter * 2;
-                }
-            }
-
-            .cards {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                gap: $gutter  * 2;
-
-                @include responsive (tabletplus) {
-                    flex-wrap: wrap;
-                    justify-content: center;
-                }
-
-                .box {
-                    position: relative;
-                    text-align: center;
-                    background-color: $box-color;
-                    width: 12rem; 
-                    aspect-ratio: 1; 
-                    padding: 0; 
-                    display: flex; 
-                    flex-direction: column; 
-                    justify-content: center; 
-                    align-items: center;
-
-                    border-top-left-radius: 2.5rem;
-                    cursor: pointer;
-                    transition: .2s;
-                    
-                    p {
-                        @include font(dmsans);
-                        font-size: 1.6rem;
-                        font-weight: 500;
-                        color: $primary-color;
-                        margin-bottom: 1.5rem;
-
-                    }
-
-                    img {
-                        width: 4rem;
-                    }
-
-                    &::after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        height: .3rem;
-                        background-image: $line-gradient;
-                        bottom: -.1rem;
-                        left: 0;
-                    }
-
-                    &:hover {
-                        transform: scale(1.1);
-
-                    }
-
-
-                }
-
-
-            }
-
+        @include responsive(mobile) {
+          margin-bottom: $gutter * 2;
         }
+      }
+
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: $gutter * 2;
+
+        @include responsive(tabletplus) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .box {
+          position: relative;
+          text-align: center;
+          background-color: $box-color;
+          width: 12rem;
+          aspect-ratio: 1;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          border-top-left-radius: 2.5rem;
+          cursor: pointer;
+          transition: 0.2s;
+
+          p {
+            @include font(dmsans);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $primary-color;
+            margin-bottom: 1.5rem;
+          }
+
+          img {
+            width: 4rem;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 0.3rem;
+            background-image: $line-gradient;
+            bottom: -0.1rem;
+            left: 0;
+          }
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
     }
-
-
+  }
 }
 
 section#contacts {
-    margin: $gutter 0 $gutter * 4 0;
-    
-    .contacts {
-        margin-top: $gutter * 3;
+  margin: $gutter 0 $gutter * 12 0;
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-
-            h2 {
-                @include font(dmsans);
-                font-size: 3.2rem;
-                color: $light-color;
-                font-weight: 600;
-                margin-bottom: $gutter * 4;
-            }
-        }
-
-        .icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: $gutter * 3;
-            justify-content: center;
-        
-            
-            .icon {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: .2s;
-                
-
-                &:hover {
-                    transform: scale(1.2);
-                    
-
-                }
-
-                a {
-                    width: fit-content;
-
-                    &:first-child {
-                        margin-bottom: 2rem;
-                    }
-
-                    &:nth-child(2) {
-                        margin-bottom: 1rem;
-
-                    }
-
-                    &:last-child {
-                        p {
-                            font-size: 1.6rem;
-                            font-weight: 500;
-                            color: $grey-color;
-                        }
-                    }
-
-                    p {
-                        @include font(dmsans);
-                        font-size: 1.8rem;
-                        font-weight: bold;
-                        color: $light-color;
-
-                    }
-
-                }
-
-                .box {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: $box-color;
-                    border-radius: 50%;
-
-                    
-
-                    img {
-                        padding: 1.5rem;
-                    }
-
-                }
-            }
-        }
-        
-    }
-
-}
-
-section#projects {
+  .contacts {
+    margin-top: $gutter * 3;
 
     .container {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-        h2 {
-            @include font(dmsans);
-            font-size: 3.2rem;
-            color: $light-color;
-            font-weight: 600; 
-            text-align: center;
-        }
-        
-        h3 {
-            @include font(poppins);
-            font-weight: 500;
-            font-size: 2.4rem;
-            color: $light-color;
-            position: relative;
-            display: inline-block;
-            margin-block: $gutter * 4 5rem;
-            // text-align: center;
-            
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                width: 75%;
-                height: .3rem;
-                border-radius: 2rem;
-                margin-top: .8rem;
-                background-image: $line-gradient;
-        
-            }
-        
-        }
-
-        .cards-projects {
-            display: flex;
-            gap: $gutter * 1.5;
-            flex-wrap: wrap;
-            align-items: center;
-            // justify-content: center;
-
-            .box {
-                transition: .3s;
-                min-width: 30%;
-                
-                &:hover {
-                    transform: scale(1.2);
-                    position: relative;
-                    z-index: 2;
-
-                    @include responsive (mobile) {
-                        transform: scale(1.05);
-                    }
-            
-                }
-
-                .cover {
-                    position: relative;
-                    cursor: pointer;
-
-                    &::after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        height: .3rem;
-                        bottom: .1rem;
-                        background-image: $line-gradient;
-                
-                    }
-
-                    &::before {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        background-color: $transparent;
-                        
-
-                    }
-
-                    .details {
-                        position: absolute;
-                        width: 100%;
-                        top: 55%;
-                        left: 50%;
-                        transform: translate(-50%, -50%); 
-                        display: flex; 
-                        flex-direction: column;
-                        align-items: center;
-                        
-
-                        p {
-                            @include font(poppins);
-                            font-size: 1.8rem;
-                            font-weight: 500;
-                            color: $light-color;
-                            margin-bottom: 1rem;
-
-                        }
-
-                    }
-
-                    & > img {
-                        width: 100%;
-                        
-                        
-                    }
-
-                }       
-                
-                .description {
-                    background-color: $box-color;
-                    padding: 1.5rem 2rem 1.2rem 2rem;
-                    display: none;
-                    position: absolute;
-                    width: 90%;
-                    align-items: center;
-                    justify-content: space-between;
-                    border-radius: 0 0 2rem 2rem;
-                    cursor: pointer;
-
-                    @include responsive (tablet) {
-                        width: 88%;
-                    }
-
-                    @include responsive (mobile) {
-                        width: 90%;
-                    }
-
-                    p {
-                        @include font(poppins);
-                        font-weight: 500;
-                        font-size: 1.1rem;
-                        color: $light-color;
-                    }
-
-                    a {
-                        display: inline-block;
-                        width: fit-content;
-                        color: $light-color;
-                        @include font(poppins);
-                        font-weight: 500;
-                        font-size: 1.1rem;
-                        padding: .5rem 1.5rem; 
-                        border: .1rem solid $primary-color;
-                        border-radius: 2rem;
-                        animation: backgroundScale 1s .5s forwards;
-
-                    }
-                           
-
-                }
-
-                &:hover .details, &:hover .cover::before {
-                    display: none;
-                    visibility: hidden;   
-                    animation: fade 1s;
-                }
-
-                &:hover .description {
-                    display: flex;
-                    animation: showDown .5s forwards;
-                    z-index: -50;
-                    
-                }
-
-                @include responsive (tabletplus) {
-                    width: 40vw;
-                }
-
-                @include responsive (mobile) {
-                    width: 100%;
-                }
-            
-            }
-        }
-
-    }
-
-
-}
-
-.js-section {
-    opacity: 0;
-    transition: .5s;
-    transform: translateX(-10rem);
-
-    &.active {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.menuOpen {
-    position: fixed;
-    width: 100%;
-    z-index: 200;
-    background-color: $transparent;
-    backdrop-filter: blur(10px);
-    top: 9%;
-    height: 100vh;
-    animation: appearField 1s;
-    @include font(poppins);
-    display: flex;
-    flex-direction: column;
-    padding-top: $gutter * 3;
-    align-items: center;
-    animation: fade 1s;
-
-    h2 {
-        color: $primary-color;
+      h2 {
+        @include font(dmsans);
+        font-size: 3.2rem;
+        color: $light-color;
         font-weight: 600;
-        font-size: 3.8rem;
-        
-        @include responsive (verticalphone) {
-            font-size: clamp(1.6rem, 6vw, 3rem) !important;
-
-        }
+        margin-bottom: $gutter * 4;
+      }
     }
 
-    nav {
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $gutter * 3;
+      justify-content: center;
+
+      .icon {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: $gutter * 4;
-        gap: $gutter * 1.5;
-        height: 100%;
-     
-        @include responsive (mobile) {
-            gap: $gutter * 3
-    
+        justify-content: center;
+        transition: 0.2s;
+
+        &:hover {
+          transform: scale(1.2);
         }
 
         a {
-            cursor: pointer;
-            text-decoration: none;
+          width: fit-content;
+
+          &:first-child {
+            margin-bottom: 2rem;
+          }
+
+          &:nth-child(2) {
+            margin-bottom: 1rem;
+          }
+
+          &:last-child {
+            p {
+              font-size: 1.6rem;
+              font-weight: 500;
+              color: $grey-color;
+            }
+          }
+
+          p {
+            @include font(dmsans);
+            font-size: 1.8rem;
+            font-weight: bold;
             color: $light-color;
-            font-size: 3.8rem;
-            transition: .3s;
-            &:hover {
-                color: $primary-color;
-                transform: scale(1.4);
-            }
-
-            @include responsive (mobile) {
-                font-size: 3rem;
-        
-            }
-
+          }
         }
 
+        .box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $box-color;
+          border-radius: 50%;
 
+          img {
+            padding: 1.5rem;
+          }
+        }
+      }
     }
-
+  }
 }
 
-.modal {
+section#projects {
+  .container {
     display: flex;
     flex-direction: column;
-    width: 75%;
-    padding: $gutter;
-    gap: $gutter;
-    background-color: $dark-color;
-    border-radius: 1rem;
-    animation: fade 1s;
+    padding-bottom: 10rem;
 
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 5;
-    transform: translate(-50%, -50%);
-
-    @include responsive (tablet) {
-        width: 85%;
-        height: 80%;
-        top: 53%;
+    h2 {
+      @include font(dmsans);
+      font-size: 3.2rem;
+      color: $light-color;
+      font-weight: 600;
+      text-align: center;
     }
 
-    @include responsive (mobile) {
-        width: 85%;
-        height: 80%;
-        top: 55%;
+    h3 {
+      @include font(poppins);
+      font-weight: 500;
+      font-size: 2.4rem;
+      color: $light-color;
+      position: relative;
+      display: inline-block;
+      margin-block: $gutter * 4 5rem;
+      // text-align: center;
 
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 75%;
+        height: 0.3rem;
+        border-radius: 2rem;
+        margin-top: 0.8rem;
+        background-image: $line-gradient;
+      }
     }
 
-    .top {
-        display: flex;
-        gap: $gutter * 1.5;
+    .cards-projects {
+      display: flex;
+      gap: $gutter * 1.5;
+      flex-wrap: wrap;
+      align-items: center;
+      // justify-content: center;
 
-        @include responsive (tabletplus)  {
-            flex-wrap: wrap-reverse;
-           
+      .box {
+        transition: 0.3s;
+        min-width: 30%;
 
+        &:hover {
+          transform: scale(1.2);
+          position: relative;
+          z-index: 2;
+
+          @include responsive(mobile) {
+            transform: scale(1.05);
+          }
         }
 
-        @include responsive (tablet) {
-            gap: 0;
-        }
+        .cover {
+          position: relative;
+          cursor: pointer;
 
-        .video {
-            @include responsive (tabletplus)  {
-                display: flex;
-                justify-content: center;
-    
-            }
-            
-            iframe {
-                width: 60rem;
-                height: 35rem;
-            
-                @include responsive (notebook) {
-                    width: 40rem;
-                }
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 0.3rem;
+            bottom: 0.1rem;
+            background-image: $line-gradient;
+          }
 
-                @include responsive (tabletplus)  {
-                    width: 70rem;
-        
-                }
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $transparent;
+          }
 
-                @include responsive (tablet) {
-                    width: 53rem;
-                }
-
-                @include responsive (verticalphone) {
-                    width: 38rem;
-                    height: 20rem;
-                    margin-top: $gutter
-                }
-
-                @include responsive (mobile) {
-                    display: none;
-
-                }
-            }
-
-
-        }
-
-        .info {
+          .details {
+            position: absolute;
+            width: 100%;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-
-            .title {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                h2 {
-                    @include font(poppins);
-                    font-size: 3.2rem;
-                    font-weight: 500;
-                    color: $primary-color;
-                    
-                }
-
-                i {
-                    cursor: pointer;
-                    font-size: 2.8rem;
-                    color: $primary-color;
-                }
-
-            }
+            align-items: center;
 
             p {
-                
-                @include font(dmsans);
-                font-size: 1.4rem;
-                font-weight: 500;
-                color: $grey-color;
-                line-height: 140%;
-                padding: 1rem 0;
-
-
+              @include font(poppins);
+              font-size: 1.8rem;
+              font-weight: 500;
+              color: $light-color;
+              margin-bottom: 1rem;
             }
+          }
 
-            span {
-                @include font(dmsans);
-                font-size: 1.4rem;
-                font-weight: 500;
-                color: $primary-color;
-                
-                
-            }
-        }
-    }
-
-    .links {
-        display: flex;
-        gap: $gutter;
-
-        @include responsive (mobile) {
-            flex-wrap: wrap;
-            gap: $gutter / 2;
-
+          & > img {
+            width: 100%;
+          }
         }
 
-        a {
+        .description {
+          background-color: $box-color;
+          padding: 1.5rem 2rem 1.2rem 2rem;
+          display: none;
+          position: absolute;
+          width: 90%;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: 0 0 2rem 2rem;
+          cursor: pointer;
+
+          @include responsive(tablet) {
+            width: 88%;
+          }
+
+          @include responsive(mobile) {
+            width: 90%;
+          }
+
+          p {
+            @include font(poppins);
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: $light-color;
+          }
+
+          a {
             display: inline-block;
             width: fit-content;
             color: $light-color;
             @include font(poppins);
             font-weight: 500;
             font-size: 1.1rem;
-            padding: 1rem 1.5rem; 
-            background-image: $btn-gradient;
-            border-radius: .5rem;
-
-            @include responsive (mobile) {
-                width: 100%;
-                text-align: center;
-            }
-
+            padding: 0.5rem 1.5rem;
+            border: 0.1rem solid $primary-color;
+            border-radius: 2rem;
+            animation: backgroundScale 1s 0.5s forwards;
+          }
         }
+
+        &:hover .details,
+        &:hover .cover::before {
+          display: none;
+          visibility: hidden;
+          animation: fade 1s;
+        }
+
+        &:hover .description {
+          display: flex;
+          animation: showDown 0.5s forwards;
+          z-index: -50;
+        }
+
+        @include responsive(tabletplus) {
+          width: 40vw;
+        }
+
+        @include responsive(mobile) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.js-section {
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-10rem);
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.menuOpen {
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+  background-color: $transparent;
+  backdrop-filter: blur(10px);
+  top: 9%;
+  height: 100vh;
+  animation: appearField 1s;
+  @include font(poppins);
+  display: flex;
+  flex-direction: column;
+  padding-top: $gutter * 3;
+  align-items: center;
+  animation: fade 1s;
+
+  h2 {
+    color: $primary-color;
+    font-weight: 600;
+    font-size: 3.8rem;
+
+    @include responsive(verticalphone) {
+      font-size: clamp(1.6rem, 6vw, 3rem) !important;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: $gutter * 4;
+    gap: $gutter * 1.5;
+    height: 100%;
+
+    @include responsive(mobile) {
+      gap: $gutter * 3;
     }
 
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: $light-color;
+      font-size: 3.8rem;
+      transition: 0.3s;
+      &:hover {
+        color: $primary-color;
+        transform: scale(1.4);
+      }
+
+      @include responsive(mobile) {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding: $gutter;
+  gap: $gutter;
+  background-color: $dark-color;
+  border-radius: 1rem;
+  animation: fade 1s;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+
+  @include responsive(tablet) {
+    width: 85%;
+    height: 80%;
+    top: 53%;
+  }
+
+  @include responsive(mobile) {
+    width: 85%;
+    height: 80%;
+    top: 55%;
+  }
+
+  .top {
+    display: flex;
+    gap: $gutter * 1.5;
+
+    @include responsive(tabletplus) {
+      flex-wrap: wrap-reverse;
+    }
+
+    @include responsive(tablet) {
+      gap: 0;
+    }
+
+    .video {
+      @include responsive(tabletplus) {
+        display: flex;
+        justify-content: center;
+      }
+
+      iframe {
+        width: 60rem;
+        height: 35rem;
+
+        @include responsive(notebook) {
+          width: 40rem;
+        }
+
+        @include responsive(tabletplus) {
+          width: 70rem;
+        }
+
+        @include responsive(tablet) {
+          width: 53rem;
+        }
+
+        @include responsive(verticalphone) {
+          width: 38rem;
+          height: 20rem;
+          margin-top: $gutter;
+        }
+
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          @include font(poppins);
+          font-size: 3.2rem;
+          font-weight: 500;
+          color: $primary-color;
+        }
+
+        i {
+          cursor: pointer;
+          font-size: 2.8rem;
+          color: $primary-color;
+        }
+      }
+
+      p {
+        @include font(dmsans);
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $grey-color;
+        line-height: 140%;
+        padding: 1rem 0;
+      }
+
+      span {
+        @include font(dmsans);
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: $gutter;
+
+    @include responsive(mobile) {
+      flex-wrap: wrap;
+      gap: $gutter / 2;
+    }
+
+    a {
+      display: inline-block;
+      width: fit-content;
+      color: $light-color;
+      @include font(poppins);
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 1rem 1.5rem;
+      background-image: $btn-gradient;
+      border-radius: 0.5rem;
+
+      @include responsive(mobile) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
 }
 
 body {
-    &.transparent::after {
-        content: '';
-        width: 100%;
-        height: 1000%;
-        background-color: $transparent;
-        backdrop-filter: blur(3px);
-        display: block;
-        top: 0;
-        left: 0;
-        position: absolute;
-        z-index: 0;
-        animation: fade 1s;
+  &.transparent::after {
+    content: "";
+    width: 100%;
+    height: 1000%;
+    background-color: $transparent;
+    backdrop-filter: blur(3px);
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    animation: fade 1s;
+  }
+
+  &.light-mode {
+    background-color: $light-color;
+
+    header {
+      background-color: $dark-color;
+
+      h2 {
+        color: $light-color !important;
+      }
     }
 
-    &.light-mode {
+    .banner {
+      h1 {
+        color: $dark-color !important;
+      }
+      span {
+        color: $dark-color !important;
+      }
 
-        background-color: $light-color;
-
-        header {
-            background-color: $dark-color;  
-
-            h2 {
-                color: $light-color !important;
-            }
+      .actions {
+        a:nth-child(2) {
+          color: $dark-color !important;
+          &:hover {
+            color: $light-color !important;
+          }
         }
-
-        .banner {
-            h1 {
-                color: $dark-color !important;
-                
-            }
-            span {
-                color: $dark-color !important;
-            }
-            
-            .actions {
-                a:nth-child(2) {
-                    color: $dark-color !important;
-                    &:hover {
-                        color: $light-color !important;
-                    }
-
-                }
-            }
-
-            
-        }
-        
-        h2, h3 {
-            color: $dark-color !important;
-            
-        }
-
-        .contacts {
-            p {
-                color: $dark-color !important;
-            }
-        }
-
-        .modal {
-            h2 {
-                color: $primary-color !important;
-            }
-        }
-
-        .menuOpen {
-            h2 {
-                color: $light-color !important;
-            }
-        }
-
-        
-
+      }
     }
-    
+
+    h2,
+    h3 {
+      color: $dark-color !important;
+    }
+
+    .contacts {
+      p {
+        color: $dark-color !important;
+      }
+    }
+
+    .modal {
+      h2 {
+        color: $primary-color !important;
+      }
+    }
+
+    .menuOpen {
+      h2 {
+        color: $light-color !important;
+      }
+    }
+  }
 }
-
